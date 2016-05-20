@@ -25,3 +25,5 @@ void __fastcall TForm5::UDPServer1UDPRead(TIdUDPListenerThread *AThread, const T
 {
 LMessages->Items->Add(BytesToString(AData));
 }
+
+//End of UDP 
