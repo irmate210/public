@@ -13,3 +13,15 @@ __fastcall TForm5::TForm5(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm5::Button1Click(TObject *Sender)
+{
+
+UDPClient1->Host = EHost->Text;
+UDPClient1->Send(EMessage->Text);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm5::UDPServer1UDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
+          TIdSocketHandle *ABinding)
+{
+LMessages->Items->Add(BytesToString(AData));
+}
